@@ -1,3 +1,6 @@
+/* App.css */
+
+/* Main container styling */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +8,21 @@
   text-align: center;
 }
 
+/* Logo styling with smooth hover effects */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms ease-in-out;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.67));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.67));
 }
 
+/* Keyframes for spinning logo animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +32,43 @@
   }
 }
 
+/* Apply spin animation if reduced motion is not preferred */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card component styling for a polished look */
 .card {
   padding: 2em;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Additional text styling */
 .read-the-docs {
   color: #888;
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+  #root {
+    padding: 1rem;
+  }
+  .logo {
+    height: 4em;
+  }
+  .card {
+    margin: 0.5rem;
+    padding: 1.5em;
+  }
 }
